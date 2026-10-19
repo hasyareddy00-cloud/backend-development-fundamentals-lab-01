@@ -19,7 +19,7 @@
 
 ## Objective
 
-To understand the fundamentals of Node.js and Express.js by creating a basic HTTP server using Node.js and developing an Express server with multiple routes.
+To create a basic HTTP server using Node.js and develop an Express server with multiple routes, JSON responses, date and time information, and 404 error handling.
 
 ## Technologies Used
 
@@ -34,8 +34,8 @@ To understand the fundamentals of Node.js and Express.js by creating a basic HTT
 
 ```text
 lab-01/
-├── server.js
 ├── app.js
+├── server.js
 ├── package.json
 ├── package-lock.json
 ├── .gitignore
@@ -50,71 +50,56 @@ lab-01/
 ## Features
 
 1. Creates a basic HTTP server using Node.js.
-2. Displays a welcome message on the home route.
-3. Returns student details in JSON format through the About route.
-4. Returns the current date and time through the Time route.
+2. Displays a welcome message on the Express home route.
+3. Returns student details in JSON format.
+4. Returns the current date and time.
 5. Handles unknown routes with a 404 status code.
-6. Deploys the Express server online using Render.
+6. Deploys the Express application using Render.
 
 ## Installation and Setup
 
 ### Prerequisites
 
-- Node.js and npm installed
-- Git installed
-- A code editor such as Visual Studio Code
+- Node.js and npm
+- Git
+- Visual Studio Code or another code editor
 
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/hasyareddy00-cloud/backend-development-fundamentals-lab-01.git
-```
-
-### 2. Open the Project Folder
-
-```bash
 cd backend-development-fundamentals-lab-01
 ```
 
-### 3. Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-## How to Run
-
-### 1. Run the Basic Node.js HTTP Server
+### 3. Run the Basic Node.js HTTP Server
 
 ```bash
 node server.js
 ```
 
-Open the following URL in your browser:
-
-http://localhost:3000
-
-The server responds with:
-
-```text
-Hello
-```
+Open `http://localhost:3000` in your browser. The server responds with `Hello`.
 
 Stop the server by pressing `Ctrl + C` before starting the Express server.
 
-### 2. Run the Express Server
+### 4. Run the Express Server
 
 ```bash
 npm start
 ```
 
-The Express server starts on port 3000 locally.
+The Express server runs on port 3000 locally. Open the endpoints below to test the responses.
 
-Open the endpoints listed below to test the server.
+**Environment variables:** No manually configured environment variables are required.
 
 ## API Endpoints
 
-| HTTP Method | Endpoint | Description | Expected Status |
+| HTTP Method | Endpoint | Description | Status |
 |---|---|---|---|
 | GET | `/` | Displays a welcome message | 200 OK |
 | GET | `/about` | Returns student details in JSON | 200 OK |
@@ -141,28 +126,28 @@ Open the endpoints listed below to test the server.
 
 ## Problems Faced and Solutions
 
-- **Port conflict:** Both the Node.js HTTP server and Express server use port 3000. The first server must be stopped before starting the second.
-- **Unknown routes:** Express middleware was added to return a 404 response for unconfigured routes.
-- **Deployment configuration:** The application was configured to use `process.env.PORT || 3000` so it can run locally and on Render.
-- **Endpoint testing:** Each endpoint was tested in the browser.
+- **Port conflict:** Both servers use port 3000 locally, so the first server must be stopped before starting the second.
+- **Unknown routes:** Express middleware returns a 404 response for unconfigured routes.
+- **Deployment configuration:** The application uses `process.env.PORT || 3000` to support Render and local execution.
+- **Endpoint testing:** All four routes were tested using a browser.
 
 ## Learning Outcomes
 
-- Learned how to create an HTTP server using Node.js.
-- Understood the purpose of Express.js.
-- Practiced creating GET routes.
+- Understood the fundamentals of Node.js and Express.js.
+- Created a server using Node.js's built-in HTTP module.
+- Practiced creating GET routes using Express.js.
 - Learned to return text and JSON responses.
 - Used `new Date()` to return the current date and time.
 - Understood HTTP status codes 200 and 404.
-- Practiced using Git and GitHub for version control.
+- Practiced version control using Git and GitHub.
 - Learned how to deploy a Node.js application using Render.
 
 ## Viva Questions and Answers
 
 ### 1. What is the difference between `package.json` and `node_modules`?
 
-- `package.json` contains project details, scripts, and dependency declarations.
-- `node_modules` contains the installed packages used by the application.
+- `package.json` stores project information, scripts, and dependency declarations.
+- `node_modules` contains the installed packages required by the application.
 
 ### 2. What does `app.listen()` do?
 
@@ -193,13 +178,10 @@ It uses the port provided by the hosting platform or defaults to port 3000 when 
 
 - **Platform:** Render
 - **Status:** Successfully deployed
-- **Live URL:** https://backend-development-fundamentals-lab-01-c1tq.onrender.com/
 - **Build Command:** `npm install`
 - **Start Command:** `npm start`
 - **Root Directory:** Repository root
 - **Environment Variables:** No manually configured variables required
-
-The application was tested using the deployed URL and its endpoints.
 
 ## Submission Checklist
 
@@ -207,7 +189,7 @@ The application was tested using the deployed URL and its endpoints.
 - [x] Node.js HTTP server created.
 - [x] Express routes implemented.
 - [x] 404 error handling implemented.
-- [x] Screenshots included in the README.
+- [x] All four screenshots included.
 - [x] Live deployment URL added.
 - [x] Code pushed to GitHub.
 - [x] `node_modules` excluded from Git.
