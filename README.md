@@ -1,4 +1,5 @@
-# Lab 1: Node.js and Express server
+
+# Lab 1: Node.js and Express Server
 
 ## Student Details
 
@@ -8,15 +9,17 @@
 - **Course:** Backend Development Fundamentals
 - **Lab Number:** 01
 
-## Live Link
+## Live Deployment
 
-**Status:** Not deployed yet.
+**Status:** Successfully deployed on Render.
 
-The Express server has not been deployed to a public hosting service yet.
+**Live URL:** https://backend-development-fundamentals-lab-01-c1tq.onrender.com/
+
+[Open Live Server](https://backend-development-fundamentals-lab-01-c1tq.onrender.com/)
 
 ## Objective
 
-To set up a Node.js project and build a small web server, first using the built-in `http` module and then using Express.js.
+To understand the fundamentals of Node.js and Express.js by creating a basic HTTP server using Node.js and developing an Express server with multiple routes.
 
 ## Technologies Used
 
@@ -25,6 +28,7 @@ To set up a Node.js project and build a small web server, first using the built-
 - JavaScript
 - npm
 - Git and GitHub
+- Render
 
 ## Project Structure
 
@@ -43,51 +47,79 @@ lab-01/
     └── 404.png
 ```
 
+## Features
+
+1. Creates a basic HTTP server using Node.js.
+2. Displays a welcome message on the home route.
+3. Returns student details in JSON format through the About route.
+4. Returns the current date and time through the Time route.
+5. Handles unknown routes with a 404 status code.
+6. Deploys the Express server online using Render.
+
 ## Installation and Setup
 
 ### Prerequisites
 
 - Node.js and npm installed
-- Git installed for version control
+- Git installed
+- A code editor such as Visual Studio Code
 
-### 1. Install Dependencies
+### 1. Clone the Repository
 
-Open a terminal in the `lab-01` directory and run:
+```bash
+git clone https://github.com/hasyareddy00-cloud/backend-development-fundamentals-lab-01.git
+```
+
+### 2. Open the Project Folder
+
+```bash
+cd backend-development-fundamentals-lab-01
+```
+
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 2. Run the Basic Node.js HTTP Server
+## How to Run
+
+### 1. Run the Basic Node.js HTTP Server
 
 ```bash
 node server.js
 ```
 
-Open `http://localhost:3000` in your browser. The server returns `Hello`.
+Open the following URL in your browser:
+
+http://localhost:3000
+
+The server responds with:
+
+```text
+Hello
+```
 
 Stop the server by pressing `Ctrl + C` before starting the Express server.
 
-### 3. Run the Express Server
+### 2. Run the Express Server
 
 ```bash
-node app.js
+npm start
 ```
 
-The Express server runs on port 3000. Open the endpoints below in your browser to test the responses.
+The Express server starts on port 3000 locally.
 
-**Environment variables:** None required for this lab.
+Open the endpoints listed below to test the server.
 
-## Endpoints
+## API Endpoints
 
-| HTTP Method | Path | Description | Expected Status |
+| HTTP Method | Endpoint | Description | Expected Status |
 |---|---|---|---|
-| GET | `/` | Returns a welcome message. | 200 OK |
-| GET | `/about` | Returns student details in JSON format. | 200 OK |
-| GET | `/time` | Returns the current date and time. | 200 OK |
-| GET | `/unknown` | Returns a JSON error for an unknown route. | 404 Not Found |
-
-Any path that is not configured should return a 404 response.
+| GET | `/` | Displays a welcome message | 200 OK |
+| GET | `/about` | Returns student details in JSON | 200 OK |
+| GET | `/time` | Returns the current date and time | 200 OK |
+| GET | `/anything` | Returns an error for an unknown route | 404 Not Found |
 
 ## Screenshots
 
@@ -105,39 +137,41 @@ Any path that is not configured should return a 404 response.
 
 ### 4. 404 Error Response
 
-![404 Error](./screenshots/404.png)
+![404 Error Response](./screenshots/404.png)
 
 ## Problems Faced and Solutions
 
-- **Port conflict:** Both servers use port 3000, so one server must be stopped before starting the other.
-- **Unknown routes:** A fallback Express middleware returns a 404 status code for unconfigured routes.
-- **Endpoint testing:** Each endpoint was opened in the browser to check its response.
+- **Port conflict:** Both the Node.js HTTP server and Express server use port 3000. The first server must be stopped before starting the second.
+- **Unknown routes:** Express middleware was added to return a 404 response for unconfigured routes.
+- **Deployment configuration:** The application was configured to use `process.env.PORT || 3000` so it can run locally and on Render.
+- **Endpoint testing:** Each endpoint was tested in the browser.
 
 ## Learning Outcomes
 
-- Understood the fundamentals of Node.js and Express.js.
-- Learned to create a server using Node.js's built-in HTTP module.
-- Practiced configuring GET routes using Express.js.
-- Learned to send text and JSON responses.
+- Learned how to create an HTTP server using Node.js.
+- Understood the purpose of Express.js.
+- Practiced creating GET routes.
+- Learned to return text and JSON responses.
 - Used `new Date()` to return the current date and time.
-- Understood HTTP status codes, including 200 and 404.
-- Practiced version control using Git and GitHub.
+- Understood HTTP status codes 200 and 404.
+- Practiced using Git and GitHub for version control.
+- Learned how to deploy a Node.js application using Render.
 
 ## Viva Questions and Answers
 
 ### 1. What is the difference between `package.json` and `node_modules`?
 
-- `package.json` stores project information, scripts, and dependency declarations.
-- `node_modules` contains the installed packages required by the project.
+- `package.json` contains project details, scripts, and dependency declarations.
+- `node_modules` contains the installed packages used by the application.
 
 ### 2. What does `app.listen()` do?
 
-It starts the Express server and makes it listen for incoming requests on the specified port.
+It starts the Express server and makes it listen for incoming requests on a specified port.
 
-### 3. What do request and response represent?
+### 3. What are request and response?
 
-- **Request:** Information sent by the client to the server.
-- **Response:** Data and status information sent by the server to the client.
+- **Request:** Information sent from a client to a server.
+- **Response:** Data and status information sent from a server to a client.
 
 ### 4. What is Express.js?
 
@@ -145,22 +179,36 @@ Express.js is a web framework for Node.js that simplifies server creation and ro
 
 ### 5. What is HTTP status code 404?
 
-It indicates that the requested resource or route was not found.
+It indicates that the requested route or resource was not found.
+
+### 6. Why do we use `process.env.PORT || 3000`?
+
+It uses the port provided by the hosting platform or defaults to port 3000 when running locally.
 
 ## GitHub Repository
 
-[Lab 1 — Backend Development Fundamentals](https://github.com/hasyareddy00-cloud/backend-development-fundamentals-lab-01)
+[View Lab 1 Repository](https://github.com/hasyareddy00-cloud/backend-development-fundamentals-lab-01)
 
 ## Deployment Notes
 
-The project has not been deployed yet. Deployment to a public hosting service such as Render or Railway is pending.
+- **Platform:** Render
+- **Status:** Successfully deployed
+- **Live URL:** https://backend-development-fundamentals-lab-01-c1tq.onrender.com/
+- **Build Command:** `npm install`
+- **Start Command:** `npm start`
+- **Root Directory:** Repository root
+- **Environment Variables:** No manually configured variables required
 
-If deployment cannot be completed, document the reason and include Postman screenshots for every endpoint, as required by the lab instructions.
+The application was tested using the deployed URL and its endpoints.
 
 ## Submission Checklist
 
-- [ ] Verify that all four screenshots appear in this README.
-- [ ] Verify that the repository is public or accessible to the faculty.
-- [ ] Add a live deployment URL after deployment, or document why deployment was not possible.
-- [ ] Ensure `node_modules` and `.env` are not committed.
-- [ ] Commit and push all final changes to GitHub.
+- [x] Student details included.
+- [x] Node.js HTTP server created.
+- [x] Express routes implemented.
+- [x] 404 error handling implemented.
+- [x] Screenshots included in the README.
+- [x] Live deployment URL added.
+- [x] Code pushed to GitHub.
+- [x] `node_modules` excluded from Git.
+- [x] `.env` excluded from Git.
