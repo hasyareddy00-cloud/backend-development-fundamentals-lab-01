@@ -5,13 +5,13 @@ const app = express();
 
 // Home route
 app.get("/", (req, res) => {
-    res.send("Welcome to Express!");
+    res.status(200).send("Welcome to Express!");
 });
 
 // About route
 app.get("/about", (req, res) => {
-    res.json({
-        name: "B.Hasya Reddyy",
+    res.status(200).json({
+        name: "B. Hasya Reddy",
         section: "CSE-GEN-AI 2A",
         rollNumber: "304"
     });
@@ -19,12 +19,12 @@ app.get("/about", (req, res) => {
 
 // Time route
 app.get("/time", (req, res) => {
-    res.json({
+    res.status(200).json({
         currentTime: new Date()
     });
 });
 
-// 404 route - handles unknown URLs
+// 404 route for unknown URLs
 app.use((req, res) => {
     res.status(404).json({
         error: "Route not found"
@@ -32,6 +32,8 @@ app.use((req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-    console.log("Express server running at http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Express server running on port ${PORT}`);
 });
