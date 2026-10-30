@@ -115,8 +115,9 @@ Parameterized SQL queries using `?` placeholders are used when passing user inpu
 
 ## Deployment
 
-**Live deployment URL:** Not deployed yet.
+**Live Deployment URL:** https://backend-lab-02.onrender.com
 
+**API Endpoint:** https://backend-lab-02.onrender.com/books/
 ## Environment Variables
 
 No environment variables are required for the current local version.
