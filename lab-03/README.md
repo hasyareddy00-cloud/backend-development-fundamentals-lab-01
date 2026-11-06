@@ -1,34 +1,53 @@
 # Lab 3: REST API, Query Parameters, Validation and Debugging
 
 ## Student Details
+
 - **Name:** B. Hasya Reddy
 - **Department:** CSE – GEN AI
 - **Section:** GEN AI – 2A
 - **College:** Aurora Deemed to be University
 
 ## Objective
+
 To develop REST APIs with search, sorting, filtering, input validation and proper HTTP status codes using Node.js, Express.js and SQLite.
 
 ## Technologies Used
+
 - Node.js
 - Express.js
 - SQLite
 - JavaScript
-- Postman / PowerShell
+- Express.js REST API
+- PowerShell for API testing
 
 ## Installation and Execution
 
-1. Install dependencies:
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/hasyareddy00-cloud/backend-development-fundamentals-lab-01.git
+   ```
+
+2. Navigate to the Lab 3 folder:
+
+   ```bash
+   cd backend-development-fundamentals-lab-01/lab-03
+   ```
+
+3. Install dependencies:
+
    ```bash
    npm install
    ```
 
-2. Start the server:
+4. Start the server:
+
    ```bash
    npm start
    ```
 
-3. Server URL:
+5. Local server URL:
+
    `http://localhost:3000`
 
 ## API Endpoints
@@ -42,34 +61,74 @@ To develop REST APIs with search, sorting, filtering, input validation and prope
 | DELETE | `/books/:bookId/` | Delete a book |
 
 ## Query Parameters
-- `search_q` – Search books by title
-- `order_by` – Sort by a column
-- `order` – ASC or DESC
-- `limit` – Limit results
-- `offset` – Skip results
-- `min_price` – Minimum price
-- `max_price` – Maximum price
+
+| Parameter | Description |
+|---|---|
+| `search_q` | Search books by title |
+| `order_by` | Sort by a column |
+| `order` | Sort in ASC or DESC order |
+| `limit` | Limit the number of results |
+| `offset` | Skip a number of results |
+| `min_price` | Filter by minimum price |
+| `max_price` | Filter by maximum price |
+
+### Example Requests
+
+- Search: `/books/?search_q=Harry`
+- Sort: `/books/?order_by=price&order=ASC`
+- Limit: `/books/?limit=5&offset=0`
+- Price filter: `/books/?min_price=300&max_price=400`
 
 ## Validation and Status Codes
-- 200 – Successful request
-- 201 – Book created
-- 400 – Invalid input
-- 404 – Book not found
-- 500 – Server error
+
+- **200 – OK:** Successful request.
+- **201 – Created:** Book created successfully.
+- **400 – Bad Request:** Invalid input or missing required fields.
+- **404 – Not Found:** Book not found.
+- **500 – Internal Server Error:** Server-side error.
+
+Input validation checks required fields such as title and author, and validates numeric price values.
 
 ## Testing
+
 API testing was performed using PowerShell HTTP requests.
 
 Tested features:
-- Get all books
-- Search and sorting
-- Limit and price filtering
-- POST validation
-- Create, read, update and delete operations
-- Missing book handling
+
+- Get all books.
+- Search books by title.
+- Sort books in ascending order.
+- Limit and filter results.
+- Filter books using minimum and maximum prices.
+- Validate POST request data.
+- Create a new book.
+- Read a book by ID.
+- Update a book.
+- Delete a book.
+- Handle requests for missing book IDs.
 
 ## Screenshots
-Lab 3 screenshots are stored in `screenshots/lab3/`.
+
+Lab 3 screenshots are stored in the `screenshots/lab3/` folder.
+
+The screenshots demonstrate:
+
+- Search books.
+- POST validation error.
+- Successful POST request.
+- Successful PUT request.
+- DELETE and 404 response.
+
+## Live Deployment
+
+**Platform:** Render
+
+**Live Server URL:**  
+https://backend-lab-03-yzg3.onrender.com
+
+**Books API Endpoint:**  
+https://backend-lab-03-yzg3.onrender.com/books/
 
 ## Conclusion
-Successfully developed and tested REST APIs with query parameters, validation, filtering and appropriate HTTP status codes.
+
+Successfully developed and deployed REST APIs using Node.js, Express.js and SQLite. Implemented search, sorting, filtering, input validation and appropriate HTTP status codes. Tested the API using PowerShell and deployed the application on Render.
