@@ -1,8 +1,8 @@
 {
-  "name": "lab-02",
+  "name": "lab-03",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Lab 3 REST API, Query Parameters, Validation and Debugging",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
