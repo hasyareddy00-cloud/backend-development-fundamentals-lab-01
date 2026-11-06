@@ -71,5 +71,15 @@ Tested features:
 ## Screenshots
 Lab 3 screenshots are stored in `screenshots/lab3/`.
 
+## Live Deployment
+
+**Platform:** Render
+
+**Live Server URL:**
+https://backend-lab-03-yzg3.onrender.com
+
+**Books API Endpoint:**
+https://backend-lab-03-yzg3.onrender.com/books/
+
 ## Conclusion
 Successfully developed and tested REST APIs with query parameters, validation, filtering and appropriate HTTP status codes.
