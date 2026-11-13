@@ -8,9 +8,7 @@ The application provides REST API endpoints to perform CRUD operations on machin
 
 ## Live API
 
-**Render Deployment:** https://lg-14-teatime-vending.onrender.com
-
-**GitHub Repository:** https://github.com/kondasusvitha13-debug/Lab1-Express-Server
+**GitHub Repository:** https://github.com/hasyareddy00-cloud/backend-development-fundamentals-lab-01
 
 ## Technologies Used
 
@@ -24,37 +22,34 @@ The application provides REST API endpoints to perform CRUD operations on machin
 ## Project Structure
 
 ```text
-LG-14-TeaTime-Vending/
-│
-├── controllers/
-│
-├── database/
-│   ├── db.js
-│   └── teatime.db
-│
-├── routes/
-│   ├── assignmentRoutes.js
-│   ├── auditRoutes.js
-│   ├── machineRoutes.js
-│   └── operatorRoutes.js
-│
-├── screenshots/
-│   ├── add_machine.png
-│   ├── delete_machine.png
-│   ├── get_all_machines.png
-│   ├── get_all_operators.png
-│   ├── get_assignments.png
-│   ├── get_operator_by_id.png
-│   ├── latest_audit_records.png
-│   ├── search_machine_by_product.png
-│   └── update_machine.png
-│
-├── .gitignore
-├── package.json
-├── package-lock.json
-├── README.md
-├── server.js
-└── teatime-requests.http
+Group-Assignment/
+└── TeaTime-Vending/
+    ├── database/
+    │   ├── db.js
+    │   └── teatime.db
+    ├── routes/
+    │   ├── assignmentRoutes.js
+    │   ├── auditRoutes.js
+    │   ├── machineRoutes.js
+    │   └── operatorRoutes.js
+    ├── screenshots/
+    │   ├── add_machine.png
+    │   ├── delete_machine.png
+    │   ├── get_all_machines.png
+    │   ├── get_all_machines_by_id.png
+    │   ├── get_all_operators.png
+    │   ├── get_assignments.png
+    │   ├── get_operator_by_id.png
+    │   ├── latest_audit_records.png
+    │   ├── search_machine_by_product.png
+    │   └── update_machine.png
+    ├── .gitignore
+    ├── package.json
+    ├── package-lock.json
+    ├── README.md
+    ├── server.js
+    ├── TeaTime-Vending.postman_collection.json
+    └── teatime-requests.http
 ```
 
 ## Installation and Setup
@@ -62,13 +57,13 @@ LG-14-TeaTime-Vending/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/kondasusvitha13-debug/Lab1-Express-Server.git
+git clone https://github.com/hasyareddy00-cloud/backend-development-fundamentals-lab-01.git
 ```
 
 ### 2. Navigate to the Project Folder
 
 ```bash
-cd Backend-Development-Labs/LG-14-TeaTime-Vending
+cd backend-development-fundamentals-lab-01/Group-Assignment/TeaTime-Vending
 ```
 
 ### 3. Install Dependencies
