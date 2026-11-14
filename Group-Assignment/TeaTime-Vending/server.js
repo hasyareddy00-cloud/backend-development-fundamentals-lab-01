@@ -1,4 +1,5 @@
 
+
 const express = require("express");
 const db = require("./database/db");
 
@@ -9,6 +10,7 @@ const auditRoutes = require("./routes/auditRoutes");
 
 const app = express();
 
+// Middleware
 app.use(express.json());
 
 // Home route
@@ -22,8 +24,17 @@ app.use("/operators", operatorRoutes);
 app.use("/assignments", assignmentRoutes);
 app.use("/audit", auditRoutes);
 
+// Handle undefined routes
+app.use((req, res) => {
+    res.status(404).json({
+        message: "Route not found"
+    });
+});
+
+// Server configuration
 const PORT = process.env.PORT || 3000;
 
+// Start server
 app.listen(PORT, () => {
     console.log(`TeaTime Vending API running on port ${PORT}`);
 });
