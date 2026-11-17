@@ -17,38 +17,40 @@ To develop REST APIs with search, sorting, filtering, input validation and prope
 - Express.js
 - SQLite
 - JavaScript
-- Express.js REST API
 - PowerShell for API testing
+- VS Code
 
 ## Installation and Execution
 
-1. Clone the repository:
+### 1. Clone the Repository
 
-   ```bash
-   git clone https://github.com/hasyareddy00-cloud/backend-development-fundamentals-lab-01.git
-   ```
+```bash
+git clone https://github.com/hasyareddy00-cloud/backend-development-fundamentals-lab-01.git
+```
 
-2. Navigate to the Lab 3 folder:
+### 2. Navigate to the Lab 3 Folder
 
-   ```bash
-   cd backend-development-fundamentals-lab-01/lab-03
-   ```
+```bash
+cd backend-development-fundamentals-lab-01/lab-03
+```
 
-3. Install dependencies:
+### 3. Install Dependencies
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-4. Start the server:
+### 4. Start the Server
 
-   ```bash
-   npm start
-   ```
+```bash
+npm start
+```
 
-5. Local server URL:
+### 5. Local Server URL
 
-   `http://localhost:3000`
+```text
+http://localhost:3000
+```
 
 ## API Endpoints
 
@@ -74,10 +76,10 @@ To develop REST APIs with search, sorting, filtering, input validation and prope
 
 ### Example Requests
 
-- Search: `/books/?search_q=Harry`
-- Sort: `/books/?order_by=price&order=ASC`
-- Limit: `/books/?limit=5&offset=0`
-- Price filter: `/books/?min_price=300&max_price=400`
+- **Search:** `/books/?search_q=Harry`
+- **Sort:** `/books/?order_by=price&order=ASC`
+- **Limit:** `/books/?limit=5&offset=0`
+- **Price Filter:** `/books/?min_price=300&max_price=400`
 
 ## Validation and Status Codes
 
@@ -93,7 +95,7 @@ Input validation checks required fields such as title and author, and validates 
 
 API testing was performed using PowerShell HTTP requests.
 
-Tested features:
+The following features were tested:
 
 - Get all books.
 - Search books by title.
@@ -109,15 +111,27 @@ Tested features:
 
 ## Screenshots
 
-Lab 3 screenshots are stored in the `screenshots/lab3/` folder.
+The following screenshots demonstrate the REST API testing results.
 
-The screenshots demonstrate:
+### 1. Search Books
 
-- Search books.
-- POST validation error.
-- Successful POST request.
-- Successful PUT request.
-- DELETE and 404 response.
+![Search Books](screenshots/lab3/search-books.png)
+
+### 2. POST Validation Error
+
+![POST Validation Error](screenshots/lab3/validation-error.png)
+
+### 3. Successful POST Request
+
+![POST Success](screenshots/lab3/post-success.png)
+
+### 4. Successful PUT Request
+
+![PUT Success](screenshots/lab3/put-success.png)
+
+### 5. DELETE and 404 Response
+
+![DELETE and 404](screenshots/lab3/delete-404.png)
 
 ## Live Deployment
 
@@ -127,16 +141,6 @@ The screenshots demonstrate:
 https://backend-lab-03-yzg3.onrender.com
 
 **Books API Endpoint:**  
-https://backend-lab-03-yzg3.onrender.com/books/
-
-## Live Deployment
-
-**Platform:** Render
-
-**Live Server URL:**
-https://backend-lab-03-yzg3.onrender.com
-
-**Books API Endpoint:**
 https://backend-lab-03-yzg3.onrender.com/books/
 
 ## Conclusion
